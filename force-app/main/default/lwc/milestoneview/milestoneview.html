@@ -1,0 +1,70 @@
+<template >
+    <template if:true={openmodel}>
+    <lightning-card >   
+        <div class="slds-theme_default">
+            <div class="slds-m-around_medium"  > 
+                <div class="demo-only"  style="height: 640px;">
+                    <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+                        <div class="slds-modal__container">
+                            <header class="slds-modal__header" style=" padding: 5px; background-color: skyblue;">
+                                <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={closeModal}>
+                                    <lightning-icon icon-name="utility:close" size="medium">
+                                    </lightning-icon>
+                                    <span class="slds-assistive-text">Close</span>
+                                </button>
+                                
+                                <lightning-record-view-form record-id={recordId} object-api-name="Milestone__c" >
+                                    <lightning-icon class="slds-float_left" style="margin-top: 5px;" icon-name="standard:entity_milestone" ></lightning-icon> &nbsp;&nbsp;  <h2 id="modal-heading-01"    class=" slds-float_left slds-text-heading_small slds-hyphenate">  <lightning-output-field style="text-align: left; margin-left:5px;" field-name="Name"></lightning-output-field> </h2>
+                                </lightning-record-view-form>
+                               
+                            </header>
+                            <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                                <div class="slds-p-around_x-small">
+                                   
+                                    <lightning-record-view-form record-id={recordId} object-api-name="Milestone__c" >
+                                        <div class="slds-grid slds-gutters">
+                                            <div class="slds-col">
+                                                <lightning-output-field style=" font-weight: bold;" field-name="Project__c"></lightning-output-field>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="slds-grid slds-gutters">
+                                            <div class="slds-col">
+                                            <lightning-output-field style=" font-weight: bold;" field-name="Milestone_description__c"></lightning-output-field>
+                                            </div>
+                                        </div>
+                                            <div class="slds-grid slds-gutters">
+                                                <div class="slds-col">
+                                                <lightning-output-field  style="font-weight: bold;" field-name="Start_date__c"></lightning-output-field>
+                                                </div>
+                                                <div class="slds-col">
+                                                <lightning-output-field style="font-weight: bold;" field-name="End_date__c"></lightning-output-field>
+                                                </div>
+                                                <div class="slds-col">
+                                                <lightning-output-field style="font-weight: bold;" field-name="Status__c"></lightning-output-field>
+                                                </div>
+                                            </div>
+                                            <div class="slds-grid slds-gutters">    
+                                                <div class="slds-col">
+                                                <lightning-output-field style="margin-right: -38px; font-weight: bold;" field-name="Predecessor_Milestone__c"></lightning-output-field>
+                                                </div>
+                                                <div class="slds-col">
+                                                <lightning-output-field style="font-weight: bold;"  field-name="OwnerId"></lightning-output-field>
+                                                </div>
+                                                <div class="slds-col">
+                                                <lightning-output-field style="font-weight: bold;" field-name="Last_modified_on__c"></lightning-output-field>
+                                                </div>
+                                            </div>
+                                    </lightning-record-view-form>
+                          
+                                </div>    
+                            </div>
+                        </div>
+                    </section>
+                    <div class="slds-backdrop slds-backdrop_open"></div>
+                </div>
+            </div>
+        </div>
+    </lightning-card>
+    </template>
+</template>
